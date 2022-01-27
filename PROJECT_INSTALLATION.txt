@@ -1,6 +1,6 @@
 To completly install the project on your machine you need to download the libraries used in project.
 
-Download link: https://mega.nz/file/wFZAkBjC#g6sk66_rXqAoKfFA5Tqj-Ov7G-IGPE2XvKGb8UqvbR0
+Download link (NEW): https://mega.nz/file/UEJkkRyI#4B93xBgap-0DjfGwMFdZK6xKb1OGggmPuzAi23XoUMM
 
 Installation guide:
 	1. Download project files from the GitHub
@@ -14,7 +14,8 @@ Packages list:
 	a) ALL packages default for Unity 3D template project
 	b) 2D Pixel Perfect (if Decree will use pixel art sprites somewhere this package can be usefull): https://docs.unity3d.com/Packages/com.unity.2d.pixel-perfect@5.0/manual/index.html
 	c) Universal RP - high-end prebuilt SRP which provides i.a. post-processing effects: https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/
-	d) Input System - new more flexible Unity input system: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.2/manual/index.html
+
+IMPORTANT: We removed new input system. Please remove that package in packet manager or download dependencies from the new link.
 
 The project has configured URP settings, therefore implementation of the post processing in the project will be easy in the future.
 
@@ -23,6 +24,9 @@ Project's directory hierarchy:
 -Assets
 	--Globals (things which will be used in many scenes for the whole project)
 	--Resources (special folder used for loading assets on demand from scripts [Resource.Load fun.])
+	--Audio (all audio files here)
+		--SoundEffects (SFX here)
+		--Music	(Music here)
 	--Scenes 
 		---SceneXXX (every scene has its own directory, then it has a bunch of subdirectories where all files are grouped by their type [e.g. Objects, Scripts, Audio, Textures etc.]
 			----egObjects
