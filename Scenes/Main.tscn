@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.403922, 0.403922, 0.403922, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 3 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="MainScene" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38264, 2.57137, -2.38297 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 71.096, -0.249378 )
+layers = 3
+spot_range = 114.598
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Pillars" type="Spatial" parent="."]
+
+[node name="Pillar" parent="Pillars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 2.43532, 0, 0, 0, 1, 11.9872, 4.62768, -4.45886 )
+
+[node name="Pillar2" parent="Pillars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2122, 4.56056, 0.830914 )
+
+[node name="Pillar3" parent="Pillars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3866, 4.32746, -32.8637 )
+
+[node name="Pillar4" parent="Pillars" instance=ExtResource( 2 )]
+transform = Transform( 0.997962, 0, 0, 0, 1.54815, 0, 0, 0, 0.997962, -1.8004, 4.83105, 24.1488 )
+
+[node name="Pillar5" parent="Pillars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5965, 5.86434, 23.5856 )
