@@ -3,11 +3,11 @@ extends KinematicBody
 var speed = 20
 var acceleration = 6
 var normal_acceleration = 6
-var gravity = 40
-
-var jump = 20
-var double_jumped = false
 var air_acceleration = 1
+var gravity = 50
+
+var jump = 23
+var double_jumped = false
 
 var mouse_sensitivity = 0.3
 
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		gravity_vec += Vector3.DOWN * gravity * delta
 		acceleration = air_acceleration
 	elif is_on_floor():
-		gravity_vec = -get_floor_normal() * gravity
+		gravity_vec = -get_floor_normal() * gravity * delta
 		acceleration = normal_acceleration
 		double_jumped = false
 		
@@ -49,13 +49,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("forward"):
 		direction -= transform.basis.z
 		if Input.is_action_pressed("sprint") and is_on_floor():
-			speed = 40
+			speed = 30
 			camera.fov = 75
-		if Input.is_action_just_released("sprint"):
-			speed = 20
-			camera.fov = 70
 	elif Input.is_action_pressed("backward"):
 		direction += transform.basis.z
+	if Input.is_action_just_released("sprint") or Input.is_action_just_released("forward"):
+		speed = 20
+		camera.fov = 70
 		
 	if Input.is_action_pressed("left"):
 		direction -= transform.basis.x
