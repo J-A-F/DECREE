@@ -1,0 +1,8 @@
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\bin\Debug\DECREE.dll
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\bin\Debug\DECREE.pdb
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.csprojAssemblyReference.cache
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.AssemblyInfoInputs.cache
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.AssemblyInfo.cs
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.csproj.CoreCompileInputs.cache
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.dll
+A:\Programowanie\Games\DECREE\git_repozytoria\DECREE2\.mono\temp\obj\Debug\DECREE.pdb

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Temporary/VerticalDoorPlaceholder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Materials/WallPlaceholder.tres" type="Material" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="BoxShape" id=4]
+
+[node name="PlaceholderGateVertical" type="Spatial"]
+
+[node name="WallLeft" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 8, 0, 0, 0, 7, 0, 7, 8.5 )
+material_override = ExtResource( 2 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WallLeft"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WallLeft/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="WallMiddle" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 4.6, 0, 0, 0, 1.5, 0, 10.4, 0 )
+material_override = ExtResource( 2 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../WallLeft")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WallMiddle"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WallMiddle/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="WallRight" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 8, 0, 0, 0, 7, 0, 7, -8.5 )
+material_override = ExtResource( 2 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WallRight"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WallRight/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="VerticalDoorPlaceholder" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.5, -1.5 )

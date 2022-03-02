@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Temporary/Pillar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Temporary/PlaceholderGateHorizontal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/System/LoadCsProj.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/Temporary/PlaceholderGateVertical.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.403922, 0.403922, 0.403922, 1 )
@@ -15,7 +18,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 [node name="MainScene" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38264, 2.57137, -2.38297 )
+transform = Transform( 0.999989, 0, -0.00462553, 0, 1, 0, 0.00462553, 0, 0.999989, 6.72, 0.9, 1.4 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 71.096, -0.249378 )
@@ -48,3 +51,12 @@ transform = Transform( 0.997962, 0, 0, 0, 1.54815, 0, 0, 0, 0.997962, -1.8004, 4
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5965, 5.86434, 23.5856 )
+
+[node name="PlaceholderGateHorizontal" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.851306, 0, -0.524669, 0, 1, 0, 0.524669, 0, -0.851306, 33.2775, 4.84133, -29.7329 )
+
+[node name="TempLibraryLoader" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="PlaceholderGateVertical" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.710001, 0, 0.704201, 0, 1, 0, -0.704201, 0, 0.710001, -30.8973, 1.91411, 25.9211 )
