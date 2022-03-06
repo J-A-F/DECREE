@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/DS-12.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/crosshair_normal.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Player/InteractionRaycast.cs" type="Script" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 mid_height = 3.0
@@ -27,8 +29,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.94428, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0506625, 0 )
+script = ExtResource( 4 )
 
 [node name="MV-12" parent="Head/Camera" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.58988, -1.60595, -2.87737 )
 layers = 1048575
 skeleton = NodePath("")
+
+[node name="CenterContainer" type="CenterContainer" parent="Head/Camera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Head/Camera/CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 4
