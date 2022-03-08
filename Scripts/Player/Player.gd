@@ -9,7 +9,7 @@ var gravity = 50
 var jump = 23
 var double_jumped = false
 
-var mouse_sensitivity = 0.3
+var mouse_sensitivity = 0.2
 
 var direction = Vector3()
 var h_velocity = Vector3()

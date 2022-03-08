@@ -1,0 +1,4 @@
+.mono
+.mono/
+.import
+Models/*.gltf.import
